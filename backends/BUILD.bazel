@@ -1,0 +1,56 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "dx9",
+    strip_include_prefix = ".",
+    srcs = ["imgui_impl_dx9.cpp"],
+    hdrs = ["imgui_impl_dx9.h"],
+    deps = ["//:imgui"],
+    linkopts = [
+        "-DEFAULTLIB:D3D9.lib",
+    ],
+)
+
+cc_library(
+    name = "dx10",
+    strip_include_prefix = ".",
+    srcs = ["imgui_impl_dx10.cpp"],
+    hdrs = ["imgui_impl_dx10.h"],
+    deps = ["//:imgui"],
+    linkopts = [
+        "-DEFAULTLIB:D3D10.lib",
+    ],
+)
+
+cc_library(
+    name = "dx11",
+    strip_include_prefix = ".",
+    srcs = ["imgui_impl_dx11.cpp"],
+    hdrs = ["imgui_impl_dx11.h"],
+    deps = ["//:imgui"],
+    linkopts = [
+        "-DEFAULTLIB:D3D11.lib",
+    ],
+)
+
+cc_library(
+    name = "dx12",
+    strip_include_prefix = ".",
+    srcs = ["imgui_impl_dx12.cpp"],
+    hdrs = ["imgui_impl_dx12.h"],
+    deps = ["//:imgui"],
+    linkopts = [
+        "-DEFAULTLIB:D3D12.lib",
+        "-DEFAULTLIB:DXGI.lib",
+    ],
+)
+
+cc_library(
+    name = "win32",
+    strip_include_prefix = ".",
+    srcs = ["imgui_impl_win32.cpp"],
+    hdrs = ["imgui_impl_win32.h"],
+    deps = ["//:imgui"],
+)
