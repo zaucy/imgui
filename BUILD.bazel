@@ -1,19 +1,25 @@
 load("@rules_cc//cc:defs.bzl", "cc_library")
 
 cc_library(
+    name = "demo",
+    visibility = ["//visibility:public"],
+    srcs = ["imgui_demo.cpp"],
+    deps = [":imgui"],
+)
+
+cc_library(
     name = "imgui",
     visibility = ["//visibility:public"],
     hdrs = [
         "imgui.h",
         "imconfig.h",
-    ],
-    srcs = [
         "imgui_internal.h",
         "imstb_textedit.h",
         "imstb_rectpack.h",
         "imstb_truetype.h",
+    ],
+    srcs = [
         "imgui.cpp",
-        "imgui_demo.cpp",
         "imgui_draw.cpp",
         "imgui_tables.cpp",
         "imgui_widgets.cpp",

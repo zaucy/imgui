@@ -4,6 +4,8 @@ cc_binary(
     name = "example_win32_directx9",
     srcs = ["main.cpp"],
     deps = [
+        "//:imgui",
+        "//:demo",
         "//backends:win32",
         "//backends:dx9",
     ],
